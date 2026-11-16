@@ -1,0 +1,869 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f8fa">
+  <title>SMKN 1 DOKO | Bahasa Inggris Lecture</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #202f3b;
+      --muted: #71808b;
+      --line: #e4ebef;
+      --paper: #f4f8fa;
+      --white: #fff;
+      --blue: #477f9e;
+      --blue-dark: #285d78;
+      --blue-soft: #eaf3f7;
+      --teal: #4b998d;
+      --green-soft: #edf7f3;
+      --red: #a64e4e;
+      --red-soft: #fbefed;
+      --shadow: 0 16px 38px rgba(39, 72, 91, .08);
+      font-family: "DM Sans", sans-serif;
+      font-synthesis: none;
+      text-rendering: optimizeLegibility;
+    }
+    * { box-sizing: border-box; }
+    body { min-width: 320px; margin: 0; background: var(--paper); color: var(--ink); }
+    button, input { font: inherit; }
+    button { color: inherit; }
+    button:focus-visible, input:focus-visible { outline: 3px solid #82bed0; outline-offset: 3px; }
+    [hidden] { display: none !important; }
+    .site-header { position: sticky; z-index: 4; top: 0; border-bottom: 1px solid var(--line); background: rgba(255,255,255,.96); backdrop-filter: blur(12px); }
+    .header-inner { width: min(1120px, 100%); min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 22px; margin: auto; padding: 10px 24px; }
+    .brand { display: flex; align-items: center; gap: 11px; flex: none; color: var(--ink); text-decoration: none; }
+    .brand-mark { width: 40px; height: 40px; display: grid; place-items: center; border-radius: 12px; background: var(--blue); color: white; font-family: Manrope, sans-serif; font-size: 15px; font-weight: 800; }
+    .brand-name { font-family: Manrope, sans-serif; font-size: 14px; font-weight: 800; line-height: 1.2; }
+    .brand-caption { display: block; margin-top: 3px; color: var(--muted); font-family: "DM Sans", sans-serif; font-size: 10px; font-weight: 500; }
+    .main-nav { min-width: 0; display: flex; align-items: center; gap: 4px; }
+    .nav-link { min-height: 42px; padding: 0 13px; border: 0; border-radius: 8px; background: transparent; color: #64737d; cursor: pointer; font-size: 12px; font-weight: 700; white-space: nowrap; }
+    .nav-link:hover { background: #f4f7f8; color: var(--ink); }
+    .nav-link[aria-current="page"] { background: var(--blue-soft); color: var(--blue-dark); }
+    .student-pill { max-width: 150px; display: flex; align-items: center; gap: 8px; flex: none; padding: 6px 10px 6px 6px; border: 1px solid var(--line); border-radius: 24px; background: white; color: #52616b; font-size: 11px; font-weight: 700; }
+    .student-avatar { width: 27px; height: 27px; display: grid; flex: none; place-items: center; border-radius: 50%; background: #e1eef3; color: var(--blue-dark); font-size: 10px; }
+    .student-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    main { width: min(1120px, 100%); min-height: calc(100vh - 76px); margin: auto; padding: 38px 24px 70px; }
+    .page-top { display: flex; align-items: end; justify-content: space-between; gap: 18px; margin-bottom: 24px; }
+    .page-eyebrow { margin: 0 0 7px; color: var(--blue); font-size: 10px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    h1, h2, h3, p { letter-spacing: 0; }
+    h1, h2, h3 { font-family: Manrope, "DM Sans", sans-serif; }
+    h1 { margin: 0; font-size: clamp(25px, 4vw, 34px); font-weight: 800; line-height: 1.2; }
+    .page-description { max-width: 650px; margin: 8px 0 0; color: var(--muted); font-size: 13px; line-height: 1.7; }
+    .panel { border: 1px solid var(--line); border-radius: 12px; background: var(--white); }
+    .home-hero { position: relative; overflow: hidden; display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(220px, .7fr); gap: 24px; padding: clamp(24px, 5vw, 45px); background: #e8f2f6; }
+    .home-hero::after { position: absolute; right: -52px; bottom: -96px; width: 255px; height: 255px; border: 1px solid rgba(71,127,158,.13); border-radius: 50%; box-shadow: 0 0 0 25px rgba(71,127,158,.035), 0 0 0 52px rgba(71,127,158,.025); content: ""; }
+    .hero-copy, .hero-summary { position: relative; z-index: 1; }
+    .hero-copy { max-width: 610px; }
+    .hero-copy h1 { font-size: clamp(28px, 4.5vw, 43px); }
+    .hero-copy p { max-width: 490px; margin: 13px 0 0; color: #566a75; font-size: 14px; line-height: 1.7; }
+    .hero-summary { align-self: center; padding: 19px; border: 1px solid rgba(71,127,158,.16); border-radius: 10px; background: rgba(255,255,255,.83); }
+    .summary-label { color: var(--muted); font-size: 10px; font-weight: 700; }
+    .summary-number { margin-top: 7px; font-family: Manrope, sans-serif; font-size: 31px; font-weight: 800; line-height: 1; }
+    .summary-caption { margin-top: 6px; color: var(--muted); font-size: 10px; }
+    .progress-track { height: 8px; overflow: hidden; margin-top: 13px; border-radius: 8px; background: #e8eef0; }
+    .progress-fill { width: 0; height: 100%; border-radius: inherit; background: var(--teal); transition: width .25s ease; }
+    .button { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 0 17px; border: 1px solid transparent; border-radius: 8px; background: var(--blue); color: white; cursor: pointer; font-size: 12px; font-weight: 700; text-align: center; }
+    .button:hover { background: var(--blue-dark); }
+    .button:disabled { cursor: not-allowed; opacity: .5; }
+    .button-secondary { border-color: var(--line); background: white; color: var(--blue-dark); }
+    .button-secondary:hover { border-color: #bed4df; background: #f6fafb; }
+    .button-quiet { min-height: 38px; padding: 0 11px; background: transparent; color: var(--blue-dark); }
+    .button-quiet:hover { background: var(--blue-soft); }
+    .hero-action { margin-top: 19px; }
+    .welcome-form { max-width: 490px; margin-top: 20px; padding: 16px; border: 1px solid rgba(71,127,158,.18); border-radius: 10px; background: rgba(255,255,255,.86); }
+    .welcome-form label, .field-label { display: block; margin-bottom: 7px; color: #526571; font-size: 11px; font-weight: 700; }
+    .text-input { width: 100%; min-height: 43px; padding: 0 12px; border: 1px solid #d6e0e5; border-radius: 7px; background: white; color: var(--ink); font-size: 13px; }
+    .welcome-form .button { width: 100%; margin-top: 10px; }
+    .stats-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 20px; }
+    .stat-card { padding: 18px 19px; }
+    .stat-value { font-family: Manrope, sans-serif; font-size: 23px; font-weight: 800; }
+    .stat-label { margin-top: 4px; color: var(--muted); font-size: 11px; }
+    .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 15px; margin: 33px 0 14px; }
+    .section-heading h2 { margin: 0; font-size: 18px; font-weight: 800; }
+    .section-heading p { margin: 4px 0 0; color: var(--muted); font-size: 11px; }
+    .unit-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .unit-card { padding: 19px; }
+    .unit-number { color: var(--blue); font-size: 10px; font-weight: 800; }
+    .unit-card h3 { margin: 8px 0 6px; font-size: 16px; line-height: 1.4; }
+    .unit-card p { min-height: 38px; margin: 0; color: var(--muted); font-size: 11px; line-height: 1.6; }
+    .unit-card .progress-track { height: 6px; margin-top: 15px; }
+    .unit-card .unit-foot { display: flex; justify-content: space-between; gap: 8px; margin-top: 9px; color: var(--muted); font-size: 10px; }
+    .unit-card .button { width: 100%; margin-top: 13px; }
+    .lesson-layout { display: grid; grid-template-columns: minmax(230px, .82fr) minmax(0, 1.55fr); gap: 18px; align-items: start; }
+    .unit-list { display: grid; gap: 12px; }
+    .unit-block { padding: 17px; }
+    .unit-block h2 { margin: 0; font-size: 14px; line-height: 1.4; }
+    .unit-block .unit-description { margin: 5px 0 11px; color: var(--muted); font-size: 10px; line-height: 1.5; }
+    .lesson-select { width: 100%; min-height: 42px; display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 5px; padding: 8px 10px; border: 0; border-radius: 7px; background: transparent; color: #50616d; cursor: pointer; text-align: left; font-size: 11px; }
+    .lesson-select:hover { background: #f3f8fa; }
+    .lesson-select[aria-current="true"] { background: var(--blue-soft); color: var(--blue-dark); font-weight: 700; }
+    .lesson-check { flex: none; color: var(--teal); font-weight: 800; }
+    .lesson-reader { min-height: 340px; padding: clamp(20px, 4vw, 32px); }
+    .lesson-reader h2 { margin: 4px 0 12px; font-size: 22px; line-height: 1.3; }
+    .lesson-reader .english-copy { color: #475b67; font-size: 14px; line-height: 1.85; }
+    .subheading { margin: 22px 0 9px; font-family: Manrope, sans-serif; font-size: 13px; font-weight: 800; }
+    .example-list { display: grid; gap: 8px; }
+    .example { padding: 11px 13px; border-left: 3px solid #9fc5d6; border-radius: 0 7px 7px 0; background: #f4f8fa; color: #354d5b; font-size: 12px; line-height: 1.6; }
+    .vocab-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7px; }
+    .vocab-item { display: flex; justify-content: space-between; gap: 10px; padding: 9px 10px; border: 1px solid var(--line); border-radius: 7px; font-size: 11px; }
+    .vocab-item strong { color: var(--blue-dark); }
+    .vocab-item span { color: var(--muted); text-align: right; }
+    .reader-footer { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 23px; padding-top: 16px; border-top: 1px solid var(--line); }
+    .reader-footer p { margin: 0; color: var(--muted); font-size: 10px; }
+    .practice-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .practice-card { padding: 19px; }
+    .practice-card h2 { margin: 7px 0 6px; font-size: 16px; line-height: 1.4; }
+    .practice-card p { margin: 0; color: var(--muted); font-size: 11px; line-height: 1.6; }
+    .practice-meta { display: flex; flex-wrap: wrap; gap: 6px 11px; margin: 12px 0 15px; color: var(--muted); font-size: 10px; }
+    .status { display: inline-flex; align-items: center; padding: 5px 8px; border-radius: 20px; background: #f0f3f5; color: #657580; font-size: 9px; font-weight: 700; }
+    .status.done { background: var(--green-soft); color: #367766; }
+    .status.active { background: #fff5e3; color: #846528; }
+    .practice-card .button { width: 100%; }
+    .practice-work { max-width: 760px; margin: auto; padding: clamp(20px, 4vw, 34px); }
+    .practice-work h2 { margin: 6px 0 9px; font-size: 21px; line-height: 1.4; }
+    .practice-work .question { margin: 18px 0; font-size: 16px; font-weight: 700; line-height: 1.65; }
+    .question-options { display: grid; gap: 9px; }
+    .option-label { min-height: 47px; display: flex; align-items: center; gap: 11px; padding: 10px 13px; border: 1px solid var(--line); border-radius: 8px; background: white; cursor: pointer; font-size: 12px; line-height: 1.5; }
+    .option-label:hover { border-color: #b6ced8; background: #f9fcfd; }
+    .option-label input { width: 17px; height: 17px; flex: none; accent-color: var(--blue); }
+    .answer-form { display: grid; gap: 12px; }
+    .feedback { margin-top: 16px; padding: 14px; border-radius: 8px; font-size: 12px; line-height: 1.65; }
+    .feedback.correct { border: 1px solid #c8e3d8; background: var(--green-soft); color: #2f6858; }
+    .feedback.incorrect { border: 1px solid #efd4d0; background: var(--red-soft); color: var(--red); }
+    .work-actions { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 18px; }
+    .result-panel { max-width: 620px; margin: 24px auto; padding: clamp(24px, 5vw, 42px); text-align: center; }
+    .result-score { margin: 11px 0 3px; color: var(--blue-dark); font-family: Manrope, sans-serif; font-size: 52px; font-weight: 800; }
+    .result-panel p { color: var(--muted); font-size: 13px; line-height: 1.7; }
+    .exam-locked { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 20px; padding: 23px; border-color: #dce5e9; }
+    .lock-mark { width: 50px; height: 50px; display: grid; place-items: center; border-radius: 50%; background: #edf3f5; color: #648291; font-size: 18px; font-weight: 800; }
+    .exam-locked h2 { margin: 0; font-size: 16px; }
+    .exam-locked p { margin: 5px 0 0; color: var(--muted); font-size: 11px; line-height: 1.6; }
+    .exam-card { padding: 21px; }
+    .exam-card h2 { margin: 0 0 7px; font-size: 17px; }
+    .exam-card p { margin: 0; color: var(--muted); font-size: 11px; }
+    .exam-top { display: flex; align-items: start; justify-content: space-between; gap: 15px; }
+    .timer { min-width: 85px; padding: 9px 11px; border-radius: 8px; background: #fff5e3; color: #785a19; font-family: Manrope, sans-serif; font-size: 14px; font-weight: 800; text-align: center; }
+    .question-nav { display: flex; flex-wrap: wrap; gap: 7px; margin: 19px 0; }
+    .question-jump { width: 38px; height: 38px; border: 1px solid var(--line); border-radius: 8px; background: white; color: #64737d; cursor: pointer; font-size: 11px; font-weight: 700; }
+    .question-jump[aria-current="true"] { border-color: var(--blue); background: var(--blue-soft); color: var(--blue-dark); }
+    .question-jump.answered { border-color: #acd0c2; background: var(--green-soft); color: #367766; }
+    .exam-actions { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--line); }
+    .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 10px; background: white; }
+    table { width: 100%; min-width: 730px; border-collapse: collapse; text-align: left; }
+    th, td { padding: 13px 15px; border-bottom: 1px solid var(--line); font-size: 11px; }
+    th { background: #f7fafb; color: #677781; font-size: 10px; font-weight: 800; }
+    tr:last-child td { border-bottom: 0; }
+    td strong { display: block; font-size: 11px; }
+    td small { display: block; margin-top: 4px; color: var(--muted); font-size: 9px; }
+    .progress-cell { min-width: 145px; }
+    .progress-cell .progress-track { height: 6px; margin: 0 0 5px; }
+    .progress-cell span { color: var(--muted); font-size: 9px; }
+    .progress-summary { display: grid; grid-template-columns: 1.5fr 1fr; gap: 14px; margin-bottom: 22px; }
+    .overall-panel, .reset-panel { padding: 18px 20px; }
+    .overall-panel h2, .reset-panel h2 { margin: 0; font-size: 14px; }
+    .overall-panel p, .reset-panel p { margin: 5px 0 0; color: var(--muted); font-size: 10px; line-height: 1.6; }
+    .overall-panel .progress-track { height: 9px; }
+    .reset-panel { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .reset-panel .button { flex: none; }
+    .empty-note { padding: 18px; border: 1px dashed #cbd9df; border-radius: 9px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+    .toast { position: fixed; z-index: 10; right: 20px; bottom: 20px; max-width: min(390px, calc(100% - 40px)); padding: 12px 16px; border: 1px solid #d4e5e9; border-radius: 9px; background: white; box-shadow: var(--shadow); color: var(--blue-dark); font-size: 12px; }
+    .footer { margin-top: 34px; color: #85929a; text-align: center; font-size: 10px; }
+    @media (max-width: 820px) {
+      .header-inner { flex-wrap: wrap; gap: 9px 14px; padding: 12px 18px; }
+      .main-nav { order: 3; width: 100%; overflow-x: auto; padding-bottom: 1px; }
+      .nav-link { min-height: 39px; padding: 0 12px; }
+      .student-pill { margin-left: auto; }
+      main { padding: 28px 18px 55px; }
+      .home-hero { grid-template-columns: 1fr; gap: 18px; }
+      .hero-summary { max-width: 360px; }
+      .unit-grid, .practice-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 580px) {
+      .brand-mark { width: 35px; height: 35px; border-radius: 10px; }
+      .brand-name { font-size: 12px; }
+      .brand-caption { font-size: 9px; }
+      .student-pill { max-width: 112px; padding-right: 8px; font-size: 10px; }
+      .student-avatar { width: 25px; height: 25px; }
+      .nav-link { min-height: 40px; padding: 0 13px; font-size: 11px; }
+      main { padding: 24px 14px 42px; }
+      .page-top { align-items: start; flex-direction: column; }
+      .home-hero { gap: 16px; padding: 23px 18px; }
+      .hero-copy h1 { font-size: 29px; }
+      .hero-copy p { font-size: 12px; }
+      .hero-summary { width: 100%; }
+      .stats-row { gap: 8px; }
+      .stat-card { padding: 13px 11px; }
+      .stat-value { font-size: 20px; }
+      .stat-label { font-size: 9px; line-height: 1.4; }
+      .unit-grid, .practice-grid { grid-template-columns: 1fr; }
+      .unit-card p { min-height: 0; }
+      .lesson-layout { grid-template-columns: 1fr; }
+      .unit-list { grid-template-columns: 1fr; }
+      .lesson-reader { min-height: 0; }
+      .lesson-reader h2 { font-size: 19px; }
+      .lesson-reader .english-copy { font-size: 13px; }
+      .vocab-list { grid-template-columns: 1fr; }
+      .practice-work h2 { font-size: 18px; }
+      .practice-work .question { font-size: 14px; }
+      .exam-locked { grid-template-columns: 1fr; }
+      .exam-locked .lock-mark { order: -1; }
+      .progress-summary { grid-template-columns: 1fr; }
+      .reset-panel { align-items: start; flex-direction: column; }
+      .result-score { font-size: 45px; }
+      .work-actions { align-items: stretch; }
+      .work-actions .button { flex: 1; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#beranda" aria-label="SMK English, ke beranda" data-nav="beranda">
+        <span class="brand-mark" aria-hidden="true">SE</span>
+        <span class="brand-name">SMK English<span class="brand-caption">Bahasa Inggris untuk dunia kerja</span></span>
+      </a>
+      <nav class="main-nav" aria-label="Navigasi utama">
+        <button class="nav-link" data-nav="beranda" aria-current="page">Beranda</button>
+        <button class="nav-link" data-nav="materi">Materi</button>
+        <button class="nav-link" data-nav="latihan">Latihan</button>
+        <button class="nav-link" data-nav="ujian">Ujian</button>
+        <button class="nav-link" data-nav="progres">Progres</button>
+      </nav>
+      <div class="student-pill"><span class="student-avatar" id="header-avatar" aria-hidden="true">S</span><span class="student-name" id="header-name">Siswa</span></div>
+    </div>
+  </header>
+  <main id="page-content" tabindex="-1"></main>
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <script>
+    // ==================== DATA SECTION ====================
+    // Guru: semua materi, pelajaran, soal latihan, dan ujian dapat diedit di bagian ini.
+    // Tambah pelajaran: salin satu objek di dalam lessons pada unit yang sesuai, lalu ganti id, title, explanation, examples, dan vocabulary.
+    // Tambah soal latihan: salin satu objek di dalam questions pada practice unit; pilih type "mcq", "fill", atau "tf" dan isi explanation.
+    const DATA = {
+      units: [
+        {
+          id: "introducing",
+          title: "Introducing Yourself & Others",
+          description: "Introduce yourself and your colleagues in a friendly, professional way.",
+          lessons: [
+            {
+              id: "self-introduction", title: "Introducing Yourself at Work", level: "A2",
+              explanation: "A good self-introduction is short and clear. Say your name, your role or study program, and one useful detail. Use a polite greeting when you meet someone for the first time.",
+              examples: ["Good morning. My name is Rani, and I am a student of Office Management.", "I am doing an internship in the Human Resources department.", "It is nice to meet you. I hope we can work well together."],
+              vocabulary: [{ en: "internship", id: "magang" }, { en: "department", id: "bagian / departemen" }, { en: "colleague", id: "rekan kerja" }, { en: "pleased to meet you", id: "senang bertemu dengan Anda" }]
+            },
+            {
+              id: "introduce-colleague", title: "Introducing a Colleague", level: "A2–B1",
+              explanation: "When you introduce another person, say their name and explain how you know them. You can also mention their role. Speak clearly and give both people time to greet each other.",
+              examples: ["This is Dimas. He is our new technician.", "I would like you to meet Siti from the Sales team.", "Dimas, this is Mr. Arif, our workshop supervisor."],
+              vocabulary: [{ en: "supervisor", id: "atasan / pengawas" }, { en: "workshop", id: "bengkel / ruang praktik" }, { en: "sales team", id: "tim penjualan" }, { en: "I would like you to meet", id: "saya ingin memperkenalkan Anda kepada" }]
+            }
+          ],
+          practice: {
+            id: "introducing-practice", title: "Latihan: Perkenalan", description: "Pilih jawaban yang paling sesuai untuk situasi perkenalan di tempat kerja.",
+            questions: [
+              { type: "mcq", prompt: "Which sentence is a polite self-introduction?", options: ["My name Rina.", "Good morning. My name is Rina.", "You call me Rina."], answer: "Good morning. My name is Rina.", explanation: "Gunakan 'My name is ...' untuk memperkenalkan nama dengan jelas dan sopan." },
+              { type: "fill", prompt: "Complete the sentence: My name ___ Budi.", answer: "is", explanation: "Kata 'name' adalah tunggal, jadi gunakan 'is': My name is Budi." },
+              { type: "tf", prompt: "'Nice to meet you' is a polite expression for a first meeting.", answer: "true", explanation: "Benar. Ungkapan ini umum digunakan saat pertama kali bertemu seseorang." },
+              { type: "mcq", prompt: "A: Nice to meet you. B: ___", options: ["Nice to meet you, too.", "See you yesterday.", "I am go home."], answer: "Nice to meet you, too.", explanation: "Jawaban yang wajar adalah mengulang ungkapan tersebut dengan 'too' (juga)." },
+              { type: "fill", prompt: "Complete the sentence: She is our new team ___.", answer: "member", explanation: "'Team member' berarti anggota tim." },
+              { type: "tf", prompt: "When you introduce a colleague, you can mention their job role.", answer: "true", explanation: "Benar. Menyebutkan peran membantu orang lain mengenal rekan tersebut." }
+            ]
+          }
+        },
+        {
+          id: "application",
+          title: "Job Application Letter & CV",
+          description: "Write a clear job application and understand the key parts of a CV.",
+          lessons: [
+            {
+              id: "application-letter", title: "Writing an Application Letter", level: "B1",
+              explanation: "A job application letter explains who you are and why you want a position. Include a greeting, the job title, your relevant skills, and a polite closing. Keep each paragraph short and check your spelling before you send it.",
+              examples: ["Dear Hiring Manager,", "I am writing to apply for the position of Junior Graphic Designer.", "I have attached my CV for your consideration.", "I look forward to hearing from you. Sincerely, Andi Pratama"],
+              vocabulary: [{ en: "apply for", id: "melamar" }, { en: "position", id: "posisi / jabatan" }, { en: "attached", id: "terlampir" }, { en: "consideration", id: "pertimbangan" }]
+            },
+            {
+              id: "cv-profile", title: "Writing a Short CV Profile", level: "B1",
+              explanation: "A CV gives an employer important information about your education, skills, and experience. A short profile at the top can describe your strengths and the kind of work you want. Be honest and choose details related to the job.",
+              examples: ["A vocational school graduate with basic experience in motorcycle maintenance.", "Able to use Microsoft Office and communicate well with customers.", "Education: SMK Teknologi Nusantara, Automotive Engineering, 2023–2026."],
+              vocabulary: [{ en: "work experience", id: "pengalaman kerja" }, { en: "education", id: "pendidikan" }, { en: "strength", id: "kelebihan" }, { en: "graduate", id: "lulusan" }]
+            }
+          ],
+          practice: {
+            id: "application-practice", title: "Latihan: Surat Lamaran & CV", description: "Kenali ungkapan dan informasi penting dalam lamaran kerja.",
+            questions: [
+              { type: "mcq", prompt: "Which subject line is clear for a job application email?", options: ["Hello there", "Application for Marketing Assistant", "Please read this now"], answer: "Application for Marketing Assistant", explanation: "Subjek yang jelas menyebutkan tujuan email dan posisi yang dilamar." },
+              { type: "fill", prompt: "Complete the sentence: I am writing to ___ for the position of receptionist.", answer: "apply", explanation: "Gunakan 'apply for a position' yang berarti melamar suatu posisi." },
+              { type: "tf", prompt: "A CV usually includes education and work experience.", answer: "true", explanation: "Benar. Pendidikan dan pengalaman adalah informasi umum dalam CV." },
+              { type: "mcq", prompt: "Which is a suitable formal closing for an application letter?", options: ["See ya!", "Sincerely,", "What's up?"], answer: "Sincerely,", explanation: "'Sincerely' adalah penutup formal yang sesuai untuk surat lamaran." },
+              { type: "fill", prompt: "Complete the sentence: I have attached my CV for your ___.", answer: "consideration", explanation: "Frasa formal yang umum adalah 'for your consideration' (untuk pertimbangan Anda)." },
+              { type: "tf", prompt: "A CV should include long stories that are not related to the job.", answer: "false", explanation: "Salah. Pilih informasi yang relevan dengan posisi yang dilamar." }
+            ]
+          }
+        },
+        {
+          id: "procedure",
+          title: "Procedure Text",
+          description: "Read and write clear steps for using equipment and doing everyday tasks.",
+          lessons: [
+            {
+              id: "operate-printer", title: "How to Operate a Printer", level: "A2–B1",
+              explanation: "A procedure text explains how to do or make something. It has a goal, tools or materials, and steps in the correct order. Use action verbs and sequence words such as first, next, then, and finally.",
+              examples: ["Goal: Print a document.", "First, turn on the printer and connect it to the computer.", "Next, put paper in the tray. Then, open the document and select Print.", "Finally, collect the printed pages."],
+              vocabulary: [{ en: "turn on", id: "nyalakan" }, { en: "paper tray", id: "baki kertas" }, { en: "select", id: "pilih" }, { en: "collect", id: "ambil / kumpulkan" }]
+            },
+            {
+              id: "make-tea", title: "How to Make a Cup of Tea", level: "A2",
+              explanation: "Clear instructions help another person follow each step safely. Put the steps in order. Start each instruction with an action verb, and include a warning when a step may be dangerous.",
+              examples: ["You need a cup, a tea bag, hot water, and sugar.", "First, put the tea bag in the cup.", "Next, carefully pour hot water into the cup. Wait for three minutes.", "Finally, add sugar and stir the tea."],
+              vocabulary: [{ en: "carefully", id: "dengan hati-hati" }, { en: "pour", id: "tuangkan" }, { en: "stir", id: "aduk" }, { en: "tea bag", id: "kantong teh" }]
+            }
+          ],
+          practice: {
+            id: "procedure-practice", title: "Latihan: Procedure Text", description: "Pahami urutan langkah dan ciri-ciri teks prosedur.",
+            questions: [
+              { type: "mcq", prompt: "What should you do first before printing a document?", options: ["Collect the pages", "Turn on the printer", "Close the paper tray"], answer: "Turn on the printer", explanation: "Printer perlu dinyalakan sebelum digunakan untuk mencetak." },
+              { type: "fill", prompt: "Complete the instruction: First, ___ on the printer.", answer: "turn", explanation: "Ungkapan lengkapnya 'turn on the printer' (nyalakan printer)." },
+              { type: "tf", prompt: "Procedure texts often use sequence words such as 'first' and 'next'.", answer: "true", explanation: "Benar. Kata urutan membantu pembaca mengikuti langkah dengan tepat." },
+              { type: "mcq", prompt: "What do you do after putting paper in the printer tray?", options: ["Select Print on the computer", "Turn off the printer", "Remove the ink"], answer: "Select Print on the computer", explanation: "Setelah kertas siap, pilih Print pada dokumen di komputer." },
+              { type: "fill", prompt: "Complete the instruction: ___, collect the printed pages.", answer: "finally", explanation: "'Finally' menandai langkah terakhir dalam urutan." },
+              { type: "tf", prompt: "A procedure text explains how to do or make something.", answer: "true", explanation: "Benar. Tujuan procedure text adalah memberi petunjuk langkah demi langkah." }
+            ]
+          }
+        }
+      ]
+    };
+
+    // Tambah ujian: salin satu objek ke array EXAMS. isOpen mengatur apakah ujian dapat dimulai.
+    // Tambah soal ujian: salin satu objek di questions; correctAnswer harus sama persis dengan salah satu options.
+    const EXAMS = [
+      {
+        id: "midterm-sample",
+        title: "Contoh Ujian Bahasa Inggris",
+        duration: 10,
+        isOpen: false,
+        questions: [
+          { question: "Which sentence is a professional self-introduction?", options: ["Hey, what's up?", "Good morning. My name is Sinta, and I am a student intern.", "My name Sinta."], correctAnswer: "Good morning. My name is Sinta, and I am a student intern." },
+          { question: "Which document lists education, skills, and work experience?", options: ["A CV", "A shopping list", "A procedure text"], correctAnswer: "A CV" },
+          { question: "Which word shows the final step in a procedure?", options: ["Because", "Although", "Finally"], correctAnswer: "Finally" }
+        ]
+      }
+    ];
+    // ================== END DATA SECTION ==================
+
+    const STORAGE_KEY = "smk-english-learning-progress-v1";
+    function createDefaultState(studentName = "") {
+      return { studentName, completedLessons: {}, practices: {}, examResults: {}, examSession: null, lastActivity: null };
+    }
+    const pageContent = document.getElementById("page-content");
+    let state = loadState();
+    let currentPage = "beranda";
+    let selectedLesson = null;
+    let activePracticeUnit = null;
+    let practiceResult = null;
+    let activeExamId = null;
+    let examMode = "list";
+    let examClock = null;
+    let toastTimer = null;
+
+    function loadState() {
+      try {
+        const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "null");
+        if (!saved || typeof saved !== "object") return createDefaultState();
+        return { ...createDefaultState(), ...saved, completedLessons: saved.completedLessons || {}, practices: saved.practices || {}, examResults: saved.examResults || {} };
+      } catch {
+        return createDefaultState();
+      }
+    }
+
+    function saveState() {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+        return true;
+      } catch {
+        showToast("Progres belum dapat disimpan di browser ini.");
+        return false;
+      }
+    }
+
+    function escapeHTML(value) {
+      return String(value ?? "").replace(/[&<>"']/g, character => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;", "'": "&#39;" })[character]);
+    }
+
+    function showToast(message) {
+      const toast = document.getElementById("toast");
+      toast.textContent = message;
+      toast.hidden = false;
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => { toast.hidden = true; }, 3200);
+    }
+
+    function formatDate(value) {
+      if (!value) return "—";
+      const date = new Date(value);
+      if (Number.isNaN(date.getTime())) return "—";
+      return new Intl.DateTimeFormat("id-ID", { day: "numeric", month: "short", year: "numeric" }).format(date);
+    }
+
+    function allLessons() {
+      return DATA.units.flatMap(unit => unit.lessons.map(lesson => ({ unit, lesson })));
+    }
+
+    function isLessonComplete(unitId, lessonId) {
+      return Boolean(state.completedLessons[unitId]?.includes(lessonId));
+    }
+
+    function practiceRecord(unitId) {
+      return state.practices[unitId] || { status: "Belum mulai", bestScore: null, latestScore: null, attempts: 0, lastAttempt: null, currentQuestion: 0, answers: [] };
+    }
+
+    function practiceStatus(unitId) {
+      return practiceRecord(unitId).status || "Belum mulai";
+    }
+
+    function completionForUnit(unit) {
+      const lessonDone = unit.lessons.filter(lesson => isLessonComplete(unit.id, lesson.id)).length;
+      const practiceDone = practiceStatus(unit.id) === "Selesai" ? 1 : 0;
+      const total = unit.lessons.length + 1;
+      return { lessonDone, practiceDone, total, percent: Math.round((lessonDone + practiceDone) / total * 100) };
+    }
+
+    function overallProgress() {
+      const total = DATA.units.reduce((sum, unit) => sum + unit.lessons.length + 1, 0);
+      const done = DATA.units.reduce((sum, unit) => sum + completionForUnit(unit).lessonDone + completionForUnit(unit).practiceDone, 0);
+      return { total, done, percent: total ? Math.round(done / total * 100) : 0 };
+    }
+
+    function activityForLast() {
+      const last = state.lastActivity;
+      if (last?.type === "lesson") {
+        const unit = DATA.units.find(item => item.id === last.unitId);
+        const lesson = unit?.lessons.find(item => item.id === last.lessonId);
+        if (unit && lesson && !isLessonComplete(unit.id, lesson.id)) return { ...last, unit, lesson };
+      }
+      if (last?.type === "practice" && DATA.units.some(unit => unit.id === last.unitId) && practiceStatus(last.unitId) !== "Selesai") return last;
+      const unfinishedLesson = allLessons().find(item => !isLessonComplete(item.unit.id, item.lesson.id));
+      if (unfinishedLesson) return { type: "lesson", unitId: unfinishedLesson.unit.id, lessonId: unfinishedLesson.lesson.id, ...unfinishedLesson };
+      const unfinishedPractice = DATA.units.find(unit => practiceStatus(unit.id) !== "Selesai");
+      if (unfinishedPractice) return { type: "practice", unitId: unfinishedPractice.id };
+      return null;
+    }
+
+    function syncHeader() {
+      const name = state.studentName || "Siswa";
+      document.getElementById("header-name").textContent = name;
+      document.getElementById("header-avatar").textContent = name.slice(0, 1).toLocaleUpperCase("id-ID");
+    }
+
+    function navigate(page) {
+      currentPage = page;
+      document.querySelectorAll(".nav-link").forEach(button => {
+        if (button.dataset.nav === page) button.setAttribute("aria-current", "page");
+        else button.removeAttribute("aria-current");
+      });
+      renderPage();
+      pageContent.focus({ preventScroll: true });
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function renderPage() {
+      syncHeader();
+      if (currentPage === "beranda") pageContent.innerHTML = renderHome();
+      if (currentPage === "materi") pageContent.innerHTML = renderMaterials();
+      if (currentPage === "latihan") pageContent.innerHTML = renderPracticePage();
+      if (currentPage === "ujian") pageContent.innerHTML = renderExamPage();
+      if (currentPage === "progres") pageContent.innerHTML = renderProgressPage();
+      if (currentPage === "ujian" && examMode === "aktif") startExamClock();
+    }
+
+    function renderHome() {
+      const completion = overallProgress();
+      const continued = activityForLast();
+      const name = escapeHTML(state.studentName);
+      const actionLabel = continued?.type === "practice" ? "Lanjutkan latihan" : continued ? "Lanjutkan belajar" : "Lihat materi";
+      const stats = [
+        { value: `${completion.done}/${completion.total}`, label: "materi & latihan selesai" },
+        { value: String(allLessons().filter(item => isLessonComplete(item.unit.id, item.lesson.id)).length), label: "pelajaran selesai" },
+        { value: String(DATA.units.filter(unit => practiceStatus(unit.id) === "Selesai").length), label: "latihan tuntas" }
+      ];
+      return `<section class="home-hero panel" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <p class="page-eyebrow">Bahasa Inggris untuk dunia kerja</p>
+          <h1 id="page-title">${state.studentName ? `Halo, ${name}!` : "Selamat datang!"}</h1>
+          <p>Belajar Bahasa Inggris dengan contoh yang dekat dengan dunia kerja. Pilih materi, coba latihan, dan pantau progresmu dari satu tempat.</p>
+          ${state.studentName ? `<button class="button hero-action" data-action="continue">${actionLabel} <span aria-hidden="true">→</span></button>` : `<form class="welcome-form" id="name-form"><label for="student-name-input">Tulis nama untuk mulai belajar</label><input class="text-input" id="student-name-input" name="studentName" maxlength="40" autocomplete="given-name" placeholder="Contoh: Rani" required><button class="button" type="submit">Simpan nama <span aria-hidden="true">→</span></button></form>`}
+        </div>
+        <div class="hero-summary" aria-label="Ringkasan progres">
+          <div class="summary-label">PROGRES KESELURUHAN</div><div class="summary-number">${completion.percent}%</div>
+          <div class="summary-caption">${completion.done} dari ${completion.total} target belajar</div>
+          <div class="progress-track" role="progressbar" aria-label="Progres keseluruhan" aria-valuenow="${completion.percent}" aria-valuemin="0" aria-valuemax="100"><div class="progress-fill" style="width:${completion.percent}%"></div></div>
+        </div>
+      </section>
+      <section class="stats-row" aria-label="Ringkasan belajar">${stats.map(stat => `<article class="stat-card panel"><div class="stat-value">${stat.value}</div><div class="stat-label">${stat.label}</div></article>`).join("")}</section>
+      <div class="section-heading"><div><h2>Mulai dari unit</h2><p>Tiga topik Bahasa Inggris untuk kebutuhan sekolah dan kerja.</p></div><button class="button button-quiet" data-action="navigate" data-page="materi">Semua materi →</button></div>
+      <section class="unit-grid" aria-label="Daftar unit">${DATA.units.map(renderUnitCard).join("")}</section>
+      <p class="footer">SMK English · Belajar sedikit demi sedikit, makin percaya diri.</p>`;
+    }
+
+    function renderUnitCard(unit) {
+      const progress = completionForUnit(unit);
+      return `<article class="unit-card panel"><div class="unit-number">UNIT ${DATA.units.indexOf(unit) + 1}</div><h3>${escapeHTML(unit.title)}</h3><p>${escapeHTML(unit.description)}</p><div class="progress-track" role="progressbar" aria-label="Progres ${escapeHTML(unit.title)}" aria-valuenow="${progress.percent}" aria-valuemin="0" aria-valuemax="100"><div class="progress-fill" style="width:${progress.percent}%"></div></div><div class="unit-foot"><span>${progress.lessonDone}/${unit.lessons.length} pelajaran</span><span>${progress.percent}%</span></div><button class="button button-secondary" data-action="navigate" data-page="materi">Buka unit</button></article>`;
+    }
+
+    function renderMaterials() {
+      const selection = selectedLesson ? findLesson(selectedLesson.unitId, selectedLesson.lessonId) : null;
+      return `<div class="page-top"><div><p class="page-eyebrow">Materi belajar</p><h1 id="page-title">Materi</h1><p class="page-description">Baca materi dalam Bahasa Inggris, perhatikan contoh, lalu pelajari kosakata pentingnya.</p></div></div>
+        <div class="lesson-layout"><section class="unit-list" aria-label="Daftar unit materi">${DATA.units.map(unit => `<article class="unit-block panel"><h2>${escapeHTML(unit.title)}</h2><p class="unit-description">${escapeHTML(unit.description)}</p>${unit.lessons.map(lesson => `<button class="lesson-select" data-action="lesson-select" data-unit="${unit.id}" data-lesson="${lesson.id}" aria-current="${selection?.lesson.id === lesson.id ? "true" : "false"}"><span>${escapeHTML(lesson.title)}</span><span class="lesson-check" aria-label="${isLessonComplete(unit.id, lesson.id) ? "Selesai" : "Belum selesai"}">${isLessonComplete(unit.id, lesson.id) ? "✓" : "›"}</span></button>`).join("")}</article>`).join("")}</section>
+          <section class="lesson-reader panel" id="lesson-reader" aria-live="polite">${selection ? renderLesson(selection.unit, selection.lesson) : `<div class="empty-note">Pilih pelajaran dari daftar untuk mulai membaca. Penjelasan dan contoh tersedia dalam Bahasa Inggris.</div>`}</section>
+        </div>`;
+    }
+
+    function findLesson(unitId, lessonId) {
+      const unit = DATA.units.find(item => item.id === unitId);
+      const lesson = unit?.lessons.find(item => item.id === lessonId);
+      return unit && lesson ? { unit, lesson } : null;
+    }
+
+    function renderLesson(unit, lesson) {
+      const complete = isLessonComplete(unit.id, lesson.id);
+      return `<p class="page-eyebrow">${escapeHTML(unit.title)} · Level ${escapeHTML(lesson.level)}</p><h2>${escapeHTML(lesson.title)}</h2><p class="english-copy">${escapeHTML(lesson.explanation)}</p>
+        <h3 class="subheading">Example sentences</h3><div class="example-list">${lesson.examples.map(example => `<div class="example" lang="en">${escapeHTML(example)}</div>`).join("")}</div>
+        <h3 class="subheading">Vocabulary</h3><div class="vocab-list">${lesson.vocabulary.map(item => `<div class="vocab-item"><strong lang="en">${escapeHTML(item.en)}</strong><span>${escapeHTML(item.id)}</span></div>`).join("")}</div>
+        <div class="reader-footer"><p>${complete ? "Pelajaran ini sudah selesai." : "Tandai selesai setelah kamu membaca materi."}</p><button class="button ${complete ? "button-secondary" : ""}" data-action="lesson-complete" data-unit="${unit.id}" data-lesson="${lesson.id}" ${complete ? "disabled" : ""}>${complete ? "Selesai ✓" : "Tandai selesai"}</button></div>`;
+    }
+
+    function renderPracticePage() {
+      if (activePracticeUnit) return renderPracticeWork(activePracticeUnit);
+      return `<div class="page-top"><div><p class="page-eyebrow">Coba pemahamanmu</p><h1 id="page-title">Latihan</h1><p class="page-description">Setiap unit memiliki 6 soal pilihan ganda, isian, dan benar atau salah. Hasil dan percobaanmu akan tersimpan.</p></div></div>
+        <section class="practice-grid" aria-label="Latihan per unit">${DATA.units.map(unit => renderPracticeCard(unit)).join("")}</section>`;
+    }
+
+    function renderPracticeCard(unit) {
+      const record = practiceRecord(unit.id);
+      const statusClass = record.status === "Selesai" ? "done" : record.status === "Sedang dikerjakan" ? "active" : "";
+      const buttonText = record.status === "Sedang dikerjakan" ? "Lanjutkan latihan" : record.status === "Selesai" ? "Coba lagi" : "Mulai latihan";
+      return `<article class="practice-card panel"><div class="unit-number">UNIT ${DATA.units.indexOf(unit) + 1}</div><h2>${escapeHTML(unit.practice.title)}</h2><p>${escapeHTML(unit.practice.description)}</p><div class="practice-meta"><span class="status ${statusClass}">${escapeHTML(record.status)}</span><span>${unit.practice.questions.length} soal</span>${record.attempts ? `<span>Nilai terbaik ${record.bestScore}%</span>` : ""}</div><button class="button button-secondary" data-action="practice-open" data-unit="${unit.id}">${buttonText}</button></article>`;
+    }
+
+    function renderPracticeWork(unitId) {
+      const unit = DATA.units.find(item => item.id === unitId);
+      if (!unit) { activePracticeUnit = null; return renderPracticePage(); }
+      const record = practiceRecord(unitId);
+      if (practiceResult) {
+        return `<div class="page-top"><div><p class="page-eyebrow">Hasil latihan</p><h1 id="page-title">${escapeHTML(unit.practice.title)}</h1></div></div><section class="result-panel panel" aria-live="polite"><div class="unit-number">LATIHAN SELESAI</div><div class="result-score">${practiceResult.score}%</div><p>Jawaban benar ${practiceResult.correct} dari ${unit.practice.questions.length} soal.</p><p>Nilai terakhir tersimpan. Nilai terbaik: <strong>${record.bestScore}%</strong>.</p><div class="work-actions"><button class="button button-secondary" data-action="practice-back">Kembali ke latihan</button><button class="button" data-action="practice-retry" data-unit="${unit.id}">Coba lagi</button></div></section>`;
+      }
+      const questionIndex = Math.min(record.currentQuestion || 0, unit.practice.questions.length - 1);
+      const question = unit.practice.questions[questionIndex];
+      const answered = record.answers[questionIndex] !== undefined;
+      const correct = record.answers[questionIndex] === true;
+      const typeLabel = question.type === "mcq" ? "PILIHAN GANDA" : question.type === "fill" ? "ISI BAGIAN KOSONG" : "BENAR ATAU SALAH";
+      const options = question.type === "tf" ? ["True", "False"] : question.options;
+      let answerControl = "";
+      if (question.type === "fill") answerControl = `<label class="field-label" for="practice-answer">Jawabanmu dalam Bahasa Inggris</label><input class="text-input" id="practice-answer" name="answer" autocomplete="off" placeholder="Ketik jawaban di sini" ${answered ? "disabled" : "required"}>`;
+      else answerControl = `<div class="question-options">${options.map(option => `<label class="option-label"><input type="radio" name="answer" value="${escapeHTML(option)}" ${answered ? "disabled" : "required"}><span>${escapeHTML(option)}</span></label>`).join("")}</div>`;
+      const feedback = answered ? `<div class="feedback ${correct ? "correct" : "incorrect"}" role="status"><strong>${correct ? "Benar!" : "Belum tepat."}</strong> ${escapeHTML(question.explanation)}${!correct ? ` Jawaban yang tepat: <strong>${escapeHTML(getPracticeAnswer(question))}</strong>.` : ""}</div>` : "";
+      return `<div class="page-top"><div><p class="page-eyebrow">${escapeHTML(unit.practice.title)}</p><h1 id="page-title">Latihan</h1></div><button class="button button-quiet" data-action="practice-back">Keluar dari latihan</button></div>
+        <section class="practice-work panel" aria-live="polite"><div class="unit-number">SOAL ${questionIndex + 1} DARI ${unit.practice.questions.length} · ${typeLabel}</div><div class="progress-track" role="progressbar" aria-label="Kemajuan soal" aria-valuenow="${Math.round((questionIndex + (answered ? 1 : 0)) / unit.practice.questions.length * 100)}" aria-valuemin="0" aria-valuemax="100"><div class="progress-fill" style="width:${Math.round((questionIndex + (answered ? 1 : 0)) / unit.practice.questions.length * 100)}%"></div></div>
+          <form id="practice-answer-form"><p class="question" lang="en">${escapeHTML(question.prompt)}</p>${answerControl}${feedback}<div class="work-actions">${answered ? `<button class="button" type="button" data-action="practice-next">${questionIndex === unit.practice.questions.length - 1 ? "Lihat hasil" : "Soal berikutnya →"}</button>` : `<button class="button" type="submit">Periksa jawaban</button>`}</div></form>
+        </section>`;
+    }
+
+    function getPracticeAnswer(question) {
+      if (question.type === "fill") return question.acceptedAnswers?.[0] || question.answer;
+      if (question.type === "tf") return question.answer === "true" ? "True" : "False";
+      return question.answer;
+    }
+
+    function normalizeAnswer(value) {
+      return String(value).trim().toLocaleLowerCase("en-US").replace(/[.!?,]/g, "").replace(/\s+/g, " ");
+    }
+
+    function checkPracticeAnswer(question, value) {
+      if (question.type === "fill") return (question.acceptedAnswers || [question.answer]).some(answer => normalizeAnswer(answer) === normalizeAnswer(value));
+      if (question.type === "tf") return normalizeAnswer(value) === normalizeAnswer(question.answer);
+      return value === question.answer;
+    }
+
+    function openPractice(unitId) {
+      const unit = DATA.units.find(item => item.id === unitId);
+      if (!unit) return;
+      activePracticeUnit = unitId;
+      practiceResult = null;
+      const record = practiceRecord(unitId);
+      if (record.status !== "Sedang dikerjakan") state.practices[unitId] = { ...record, status: "Sedang dikerjakan", currentQuestion: 0, answers: [] };
+      state.lastActivity = { type: "practice", unitId };
+      saveState();
+      navigate("latihan");
+    }
+
+    function submitPracticeAnswer(form) {
+      const unit = DATA.units.find(item => item.id === activePracticeUnit);
+      if (!unit) return;
+      const record = practiceRecord(unit.id);
+      const question = unit.practice.questions[record.currentQuestion];
+      const selected = new FormData(form).get("answer");
+      if (selected === null || selected === "") return;
+      const answers = [...record.answers];
+      answers[record.currentQuestion] = checkPracticeAnswer(question, selected);
+      state.practices[unit.id] = { ...record, status: "Sedang dikerjakan", answers };
+      saveState();
+      renderPage();
+    }
+
+    function nextPracticeQuestion() {
+      const unit = DATA.units.find(item => item.id === activePracticeUnit);
+      if (!unit) return;
+      const record = practiceRecord(unit.id);
+      if (record.currentQuestion < unit.practice.questions.length - 1) {
+        state.practices[unit.id] = { ...record, currentQuestion: record.currentQuestion + 1 };
+        saveState();
+        renderPage();
+        return;
+      }
+      const correct = record.answers.filter(Boolean).length;
+      const score = Math.round(correct / unit.practice.questions.length * 100);
+      const attempts = record.attempts + 1;
+      const finished = { ...record, status: "Selesai", latestScore: score, bestScore: record.bestScore === null ? score : Math.max(record.bestScore, score), attempts, lastAttempt: new Date().toISOString() };
+      state.practices[unit.id] = finished;
+      state.lastActivity = { type: "practice", unitId: unit.id };
+      saveState();
+      practiceResult = { correct, score };
+      renderPage();
+    }
+
+    function findContinueTarget() {
+      const activity = activityForLast();
+      if (activity) return activity;
+      const firstUnit = DATA.units[0];
+      return { type: "lesson", unitId: firstUnit.id, lessonId: firstUnit.lessons[0].id, unit: firstUnit, lesson: firstUnit.lessons[0] };
+    }
+
+    function continueLearning() {
+      const target = findContinueTarget();
+      if (target.type === "practice") {
+        openPractice(target.unitId);
+        return;
+      }
+      const selection = target.unit && target.lesson ? target : findLesson(target.unitId, target.lessonId);
+      selectedLesson = { unitId: selection.unit.id, lessonId: selection.lesson.id };
+      state.lastActivity = { type: "lesson", unitId: selection.unit.id, lessonId: selection.lesson.id };
+      saveState();
+      navigate("materi");
+    }
+
+    function renderExamPage() {
+      if (examMode === "aktif" && state.examSession) return renderExamActive();
+      if (examMode === "hasil" && activeExamId) return renderExamResult(activeExamId);
+      if (!EXAMS.length) return `<div class="page-top"><div><p class="page-eyebrow">Evaluasi</p><h1 id="page-title">Ujian</h1></div></div><div class="empty-note">Belum ada ujian yang disiapkan.</div>`;
+      return `<div class="page-top"><div><p class="page-eyebrow">Evaluasi akhir</p><h1 id="page-title">Ujian</h1><p class="page-description">Ujian memiliki batas waktu. Pastikan kamu siap sebelum mulai.</p></div></div>
+        <section class="unit-list" aria-label="Daftar ujian">${EXAMS.map(exam => exam.isOpen ? renderOpenExamCard(exam) : renderLockedExamCard(exam)).join("")}</section>`;
+    }
+
+    function renderLockedExamCard(exam) {
+      return `<article class="exam-locked panel"><div><h2>${escapeHTML(exam.title)}</h2><p>Ujian belum dibuka</p><p>Ujian ini akan muncul di sini saat guru membukanya.</p></div><div class="lock-mark" aria-hidden="true">×</div></article>`;
+    }
+
+    function renderOpenExamCard(exam) {
+      const result = state.examResults[exam.id];
+      return `<article class="exam-card panel"><h2>${escapeHTML(exam.title)}</h2><p>${exam.questions.length} soal pilihan ganda · ${exam.duration} menit${result ? ` · Nilai terakhir ${result.latestScore}%` : ""}</p><button class="button" data-action="exam-start" data-exam="${exam.id}" style="margin-top:16px">${state.examSession?.id === exam.id ? "Lanjutkan ujian" : "Mulai ujian"}</button></article>`;
+    }
+
+    function startExam(examId) {
+      const exam = EXAMS.find(item => item.id === examId && item.isOpen);
+      if (!exam) return;
+      activeExamId = exam.id;
+      const savedSession = state.examSession;
+      if (savedSession?.id !== exam.id || savedSession.deadline <= Date.now()) {
+        state.examSession = { id: exam.id, deadline: Date.now() + exam.duration * 60 * 1000, answers: Array(exam.questions.length).fill(null), currentQuestion: 0 };
+      }
+      examMode = "aktif";
+      saveState();
+      navigate("ujian");
+      startExamClock();
+    }
+
+    function renderExamActive() {
+      const exam = EXAMS.find(item => item.id === state.examSession?.id);
+      if (!exam) { examMode = "list"; state.examSession = null; return renderExamPage(); }
+      const session = state.examSession;
+      const questionIndex = Math.min(session.currentQuestion, exam.questions.length - 1);
+      const question = exam.questions[questionIndex];
+      return `<div class="page-top"><div><p class="page-eyebrow">Sedang berlangsung</p><h1 id="page-title">${escapeHTML(exam.title)}</h1><p class="page-description">Jawab semua soal sebelum waktu habis. Jawaban tersimpan di perangkat ini.</p></div><div class="timer" id="exam-timer" role="timer" aria-live="off">--:--</div></div>
+        <section class="practice-work panel"><div class="unit-number">NAVIGASI SOAL</div><div class="question-nav" aria-label="Pilih nomor soal">${exam.questions.map((_, index) => `<button class="question-jump ${session.answers[index] ? "answered" : ""}" data-action="exam-jump" data-index="${index}" aria-current="${index === questionIndex ? "true" : "false"}" aria-label="Soal ${index + 1}${session.answers[index] ? ", sudah dijawab" : ""}">${index + 1}</button>`).join("")}</div>
+          <div class="unit-number">SOAL ${questionIndex + 1} DARI ${exam.questions.length}</div><p class="question" lang="en">${escapeHTML(question.question)}</p>
+          <div class="question-options">${question.options.map(option => `<label class="option-label"><input type="radio" name="exam-answer" value="${escapeHTML(option)}" ${session.answers[questionIndex] === option ? "checked" : ""}><span>${escapeHTML(option)}</span></label>`).join("")}</div>
+          <div class="exam-actions"><div><button class="button button-secondary" data-action="exam-prev" ${questionIndex === 0 ? "disabled" : ""}>← Sebelumnya</button> <button class="button button-secondary" data-action="exam-next" ${questionIndex === exam.questions.length - 1 ? "disabled" : ""}>Berikutnya →</button></div><button class="button" data-action="exam-submit">Kumpulkan ujian</button></div>
+        </section>`;
+    }
+
+    function updateExamAnswer(value) {
+      if (!state.examSession) return;
+      const answers = [...state.examSession.answers];
+      answers[state.examSession.currentQuestion] = value;
+      state.examSession = { ...state.examSession, answers };
+      saveState();
+      document.querySelectorAll(".question-jump").forEach((button, index) => button.classList.toggle("answered", Boolean(answers[index])));
+    }
+
+    function jumpExamQuestion(index) {
+      if (!state.examSession) return;
+      const exam = EXAMS.find(item => item.id === state.examSession.id);
+      if (!exam || index < 0 || index >= exam.questions.length) return;
+      state.examSession = { ...state.examSession, currentQuestion: index };
+      saveState();
+      renderPage();
+    }
+
+    function startExamClock() {
+      clearInterval(examClock);
+      const tick = () => {
+        if (!state.examSession) { clearInterval(examClock); return; }
+        const remaining = Math.max(0, state.examSession.deadline - Date.now());
+        const timer = document.getElementById("exam-timer");
+        if (timer) {
+          const minutes = Math.floor(remaining / 60000).toString().padStart(2, "0");
+          const seconds = Math.floor((remaining % 60000) / 1000).toString().padStart(2, "0");
+          timer.textContent = `${minutes}:${seconds}`;
+        }
+        if (remaining <= 0) submitExam(true);
+      };
+      tick();
+      if (state.examSession) examClock = setInterval(tick, 1000);
+    }
+
+    function submitExam(auto = false) {
+      const session = state.examSession;
+      const exam = EXAMS.find(item => item.id === session?.id);
+      if (!session || !exam) return;
+      if (!auto && !confirm("Kumpulkan jawaban ujian sekarang?")) return;
+      const correct = exam.questions.filter((question, index) => session.answers[index] === question.correctAnswer).length;
+      const score = Math.round(correct / exam.questions.length * 100);
+      const previous = state.examResults[exam.id] || { attempts: 0, bestScore: null };
+      const result = { latestScore: score, bestScore: previous.bestScore === null ? score : Math.max(previous.bestScore, score), attempts: previous.attempts + 1, lastAttempt: new Date().toISOString(), correct, total: exam.questions.length };
+      state.examResults[exam.id] = result;
+      state.examSession = null;
+      activeExamId = exam.id;
+      examMode = "hasil";
+      clearInterval(examClock);
+      saveState();
+      renderPage();
+      if (auto) showToast("Waktu habis. Ujian sudah dikumpulkan otomatis.");
+    }
+
+    function renderExamResult(examId) {
+      const exam = EXAMS.find(item => item.id === examId);
+      const result = state.examResults[examId];
+      if (!exam || !result) { examMode = "list"; return renderExamPage(); }
+      return `<div class="page-top"><div><p class="page-eyebrow">Ujian selesai</p><h1 id="page-title">${escapeHTML(exam.title)}</h1></div></div><section class="result-panel panel" aria-live="polite"><div class="unit-number">HASIL UJIAN</div><div class="result-score">${result.latestScore}%</div><p>Jawaban benar ${result.correct} dari ${result.total} soal.</p><p>Nilai terbaik: <strong>${result.bestScore}%</strong> · Percobaan: <strong>${result.attempts}</strong></p><div class="work-actions"><button class="button button-secondary" data-action="exam-list">Kembali</button>${exam.isOpen ? `<button class="button" data-action="exam-start" data-exam="${exam.id}">Coba lagi</button>` : ""}</div></section>`;
+    }
+
+    function practiceStatusBadge(status) {
+      const kind = status === "Selesai" ? "done" : status === "Sedang dikerjakan" ? "active" : "";
+      return `<span class="status ${kind}">${escapeHTML(status)}</span>`;
+    }
+
+    function renderProgressPage() {
+      const completion = overallProgress();
+      const unitsTable = DATA.units.map(unit => {
+        const record = practiceRecord(unit.id);
+        const unitProgress = completionForUnit(unit);
+        return `<tr><td><strong>${escapeHTML(unit.title)}</strong><small>${unitProgress.lessonDone} dari ${unit.lessons.length} pelajaran selesai</small></td><td class="progress-cell"><div class="progress-track" role="progressbar" aria-label="Progres ${escapeHTML(unit.title)}" aria-valuenow="${unitProgress.percent}" aria-valuemin="0" aria-valuemax="100"><div class="progress-fill" style="width:${unitProgress.percent}%"></div></div><span>${unitProgress.percent}% unit selesai</span></td><td>${practiceStatusBadge(record.status)}</td><td>${record.bestScore === null ? "—" : `${record.bestScore}%`}</td><td>${record.latestScore === null ? "—" : `${record.latestScore}%`}</td><td>${record.attempts}</td><td>${formatDate(record.lastAttempt)}</td></tr>`;
+      }).join("");
+      const examRows = EXAMS.map(exam => {
+        const result = state.examResults[exam.id];
+        return `<tr><td><strong>${escapeHTML(exam.title)}</strong><small>Ujian · ${exam.duration} menit</small></td><td>${exam.isOpen ? "Dibuka" : "Belum dibuka"}</td><td>${result ? `${result.bestScore}%` : "—"}</td><td>${result ? `${result.latestScore}%` : "—"}</td><td>${result?.attempts || 0}</td><td>${formatDate(result?.lastAttempt)}</td></tr>`;
+      }).join("");
+      const completedLessonCount = allLessons().filter(item => isLessonComplete(item.unit.id, item.lesson.id)).length;
+      return `<div class="page-top"><div><p class="page-eyebrow">Catatan belajarmu</p><h1 id="page-title">Progres</h1><p class="page-description">Lihat pelajaran yang selesai, status latihan, nilai, jumlah percobaan, dan tanggal aktivitas terakhir.</p></div></div>
+        <section class="progress-summary"><article class="overall-panel panel"><h2>Progres keseluruhan</h2><p>${completion.done} dari ${completion.total} target selesai · ${completedLessonCount} pelajaran selesai</p><div class="progress-track" role="progressbar" aria-label="Progres keseluruhan" aria-valuenow="${completion.percent}" aria-valuemin="0" aria-valuemax="100"><div class="progress-fill" style="width:${completion.percent}%"></div></div></article><article class="reset-panel panel"><div><h2>Mulai dari awal</h2><p>Hapus catatan materi, latihan, dan hasil ujian di perangkat ini.</p></div><button class="button button-secondary" data-action="reset-progress">Reset progres</button></article></section>
+        <div class="section-heading"><div><h2>Progres per unit</h2><p>Status dan nilai latihan tiap unit.</p></div></div>
+        <div class="table-wrap"><table><thead><tr><th>Unit &amp; materi</th><th>Progres unit</th><th>Status latihan</th><th>Nilai terbaik</th><th>Nilai terakhir</th><th>Percobaan</th><th>Terakhir</th></tr></thead><tbody>${unitsTable}</tbody></table></div>
+        <div class="section-heading"><div><h2>Hasil ujian</h2><p>Nilai ujian yang sudah dikumpulkan.</p></div></div>
+        <div class="table-wrap"><table><thead><tr><th>Ujian</th><th>Status</th><th>Nilai terbaik</th><th>Nilai terakhir</th><th>Percobaan</th><th>Terakhir</th></tr></thead><tbody>${examRows}</tbody></table></div>`;
+    }
+
+    document.querySelector(".main-nav").addEventListener("click", event => {
+      const button = event.target.closest("[data-nav]");
+      if (button) navigate(button.dataset.nav);
+    });
+    document.querySelector(".brand").addEventListener("click", event => {
+      event.preventDefault();
+      navigate("beranda");
+    });
+
+    pageContent.addEventListener("click", event => {
+      const button = event.target.closest("[data-action]");
+      if (!button) return;
+      const { action, unit, lesson, page, exam, index } = button.dataset;
+      if (action === "navigate") navigate(page);
+      if (action === "continue") continueLearning();
+      if (action === "lesson-select") {
+        selectedLesson = { unitId: unit, lessonId: lesson };
+        state.lastActivity = { type: "lesson", unitId: unit, lessonId: lesson };
+        saveState();
+        renderPage();
+      }
+      if (action === "lesson-complete") {
+        const completed = state.completedLessons[unit] || [];
+        if (!completed.includes(lesson)) state.completedLessons[unit] = [...completed, lesson];
+        saveState();
+        renderPage();
+        showToast("Pelajaran ditandai selesai.");
+      }
+      if (action === "practice-open") openPractice(unit);
+      if (action === "practice-back") { activePracticeUnit = null; practiceResult = null; renderPage(); }
+      if (action === "practice-next") nextPracticeQuestion();
+      if (action === "practice-retry") openPractice(unit);
+      if (action === "exam-start") startExam(exam);
+      if (action === "exam-jump") jumpExamQuestion(Number(index));
+      if (action === "exam-prev") jumpExamQuestion(state.examSession.currentQuestion - 1);
+      if (action === "exam-next") jumpExamQuestion(state.examSession.currentQuestion + 1);
+      if (action === "exam-submit") submitExam(false);
+      if (action === "exam-list") { examMode = "list"; activeExamId = null; renderPage(); }
+      if (action === "reset-progress") {
+        if (!confirm("Reset semua progres belajar, nilai latihan, dan hasil ujian? Nama siswa tetap disimpan.")) return;
+        clearInterval(examClock);
+        state = createDefaultState(state.studentName);
+        activePracticeUnit = null;
+        practiceResult = null;
+        activeExamId = null;
+        examMode = "list";
+        saveState();
+        renderPage();
+        showToast("Progres belajar sudah direset.");
+      }
+    });
+
+    pageContent.addEventListener("submit", event => {
+      if (event.target.id === "name-form") {
+        event.preventDefault();
+        const name = new FormData(event.target).get("studentName").trim();
+        if (!name) return;
+        state.studentName = name;
+        saveState();
+        renderPage();
+        showToast("Nama tersimpan di perangkat ini.");
+      }
+      if (event.target.id === "practice-answer-form") {
+        event.preventDefault();
+        submitPracticeAnswer(event.target);
+      }
+    });
+
+    pageContent.addEventListener("change", event => {
+      if (event.target.name === "exam-answer") updateExamAnswer(event.target.value);
+    });
+
+    renderPage();
+  </script>
+</body>
+</html>
